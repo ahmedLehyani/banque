@@ -1,4 +1,4 @@
-package tn.enis.banque.tn.enis.banque;
+package tn.enis.banque;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
