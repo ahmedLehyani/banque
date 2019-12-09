@@ -1,12 +1,10 @@
 package tn.enis.banque.entities;
 import java.io.Serializable;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -29,9 +27,7 @@ public class Client implements Serializable {
 	@Getter
 	@Setter
 	private String cin;
-	@Getter
-	@Setter @ManyToOne(cascade = CascadeType.ALL)
-	private Compte compte;
+
 	public Client() {
 		super();
 	}

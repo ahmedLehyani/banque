@@ -2,10 +2,12 @@ package tn.enis.banque.entities;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -20,6 +22,10 @@ public class Compte implements Serializable {
 	@Getter
 	@Setter
 	private Float solde;
+	@Getter
+	@Setter
+	@ManyToOne(cascade = CascadeType.ALL)
+	private Client client;
 
 	public Compte(Long id) {
 		super();
