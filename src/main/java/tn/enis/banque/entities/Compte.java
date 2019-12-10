@@ -9,9 +9,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-import lombok.Getter;
-import lombok.Setter;
-
 @Entity
 public class Compte implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -19,13 +16,27 @@ public class Compte implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@Getter
-	@Setter
+
 	private Float solde;
-	@Getter
-	@Setter
+
 	@ManyToOne(cascade = CascadeType.ALL)
 	private Client client;
+
+	public Float getSolde() {
+		return solde;
+	}
+
+	public void setSolde(Float solde) {
+		this.solde = solde;
+	}
+
+	public Client getClient() {
+		return client;
+	}
+
+	public void setClient(Client client) {
+		this.client = client;
+	}
 
 	public Compte(Long id) {
 		super();
@@ -38,6 +49,15 @@ public class Compte implements Serializable {
 		this.solde = solde;
 	}
 
+	
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -61,14 +81,6 @@ public class Compte implements Serializable {
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 }

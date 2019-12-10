@@ -8,24 +8,21 @@ import javax.persistence.Id;
 
 import lombok.Getter;
 import lombok.Setter;
-
+@Getter
+@Setter
 @Entity
 public class Client implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@Getter
-	@Setter
+	
 	private String email;
-	@Getter
-	@Setter
+
 	private String nom;
-	@Getter
-	@Setter
+
 	private String prenom;
-	@Getter
-	@Setter
+
 	private String cin;
 
 	public Client() {
@@ -55,6 +52,38 @@ public class Client implements Serializable {
 		this.id = id;
 	}
 	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public String getPrenom() {
+		return prenom;
+	}
+
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+
+	public String getCin() {
+		return cin;
+	}
+
+	public void setCin(String cin) {
+		this.cin = cin;
+	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
